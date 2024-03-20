@@ -61,7 +61,7 @@ defmodule OpentelemetryFinch do
     }
 
     s =
-      OpenTelemetry.Tracer.start_span("HTTP #{meta.request.method}", %{
+      OpenTelemetry.Tracer.start_span("#{meta.request.method} #{meta.request.path}", %{
         start_time: start_time,
         attributes: attributes,
         kind: :client
